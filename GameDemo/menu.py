@@ -1,13 +1,13 @@
 import pygame.image
 
 from pygame import Font, Surface, Rect
-from GameDemo.Const import WIN_WIDTH, COLOR_PURPLE, MENU_OPTIONS, COLOR_WHITE, COLOR_GOLDEN
+from GameDemo.Const import WIN_WIDTH, COLOR_PURPLE, MENU_OPTIONS, COLOR_WHITE, COLOR_GOLDEN, CONTROLES
 
 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./assets/background1/menu.png').convert_alpha()
+        self.surf = pygame.image.load('./assets/menu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self,):
@@ -18,9 +18,9 @@ class Menu:
 
             for i in range(len(MENU_OPTIONS)):
                 if i == menu_option:
-                    self.menu_text(75, MENU_OPTIONS[i], COLOR_GOLDEN, ((WIN_WIDTH / 2), 400 + 60 * i))
+                    self.menu_text(60, MENU_OPTIONS[i], COLOR_GOLDEN, ((WIN_WIDTH / 2), 300 + 65 * i))
                 else:
-                    self.menu_text(75, MENU_OPTIONS[i], COLOR_WHITE, ((WIN_WIDTH / 2), 400 + 60 * i))
+                    self.menu_text(50, MENU_OPTIONS[i], COLOR_WHITE, ((WIN_WIDTH / 2), 300 + 70 * i))
             pygame.display.flip()
 
             for event in pygame.event.get():
@@ -39,15 +39,11 @@ class Menu:
                             menu_option -= 1
                         else:
                             menu_option = len(MENU_OPTIONS) - 1
-
                     if event.key == pygame.K_RETURN:
-                        return MENU_OPTIONS[menu_option]
-
-
-
+                            return MENU_OPTIONS[menu_option]
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
-        text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)
+        text_font: Font = pygame.font.SysFont(name="lucidasans", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
