@@ -1,5 +1,8 @@
+from random import randint, random
+
 from GameDemo.Const import WIN_HEIGHT, WIN_WIDTH
 from GameDemo.background import Background
+from GameDemo.enemy import Enemy
 from GameDemo.player import Player
 
 
@@ -17,4 +20,6 @@ class EntityFactory:
                 return list_background
             case 'player':
                 return Player('player', (20, 400))
+            case 'enemy':
+                return Enemy('enemy', (WIN_WIDTH +10 , 400))
 
