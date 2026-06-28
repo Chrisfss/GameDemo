@@ -1,6 +1,6 @@
 import pygame
 
-COLOR_PURPLE = (128, 0, 128)
+COLOR_PURPLE = (163, 73, 164)
 COLOR_WHITE = (255, 255, 255)
 COLOR_GOLDEN = (212, 175, 55)
 
@@ -11,9 +11,9 @@ MENU_OPTIONS = ["Jogar",
                 "Controles",
                 "Sair"
 ]
-CONTROLES = ["SETAS OU 'WASD' PARA MOVER",
-             "ESPAÇO PARA PULAR",
-             "ESC PARA SAIR",
+CONTROLS = ["WASD PARA MOVER",
+            "LSHIFT PARA ATIRAR",
+            "ESC PARA SAIR",
              ]
 EVENT_ENEMY = pygame.USEREVENT + 1
 EVENT_TIMEOUT = pygame.USEREVENT + 2
@@ -66,5 +66,5 @@ ENTITY_DAMAGE = {
     'enemy': 300,
     'enemySkill':30
 }
-SPAWN= 2000
+SPAWN= 1500
 TIMEOUT_STEP = 100

@@ -56,4 +56,3 @@ class Fase:
             EntityMediator.lifeverifier(entity_list=self.entity_list)
 
             pygame.display.flip()
-        pass

@@ -1,7 +1,7 @@
 import pygame.image
 
 from pygame import Font, Surface, Rect
-from GameDemo.Const import WIN_WIDTH, COLOR_PURPLE, MENU_OPTIONS, COLOR_WHITE, COLOR_GOLDEN, CONTROLES
+from GameDemo.Const import WIN_WIDTH, COLOR_PURPLE, MENU_OPTIONS, COLOR_WHITE, COLOR_GOLDEN
 
 
 class Menu:
@@ -13,6 +13,7 @@ class Menu:
     def run(self,):
         menu_option = 0
         while True:
+
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(100, "The Mad One", COLOR_PURPLE, ((WIN_WIDTH / 2), 170))
 
@@ -24,10 +25,10 @@ class Menu:
             pygame.display.flip()
 
             for event in pygame.event.get():
-                pressed_key = pygame.key.get_pressed()
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_DOWN:
                         if menu_option < len(MENU_OPTIONS) - 1:

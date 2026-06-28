@@ -1,6 +1,7 @@
 import pygame
 
-from GameDemo.Const import WIN_HEIGHT, WIN_WIDTH, MENU_OPTIONS, CONTROLES
+from GameDemo.Const import WIN_HEIGHT, WIN_WIDTH, MENU_OPTIONS
+from GameDemo.controlsWindow import controlsWindow
 from GameDemo.fase import Fase
 from GameDemo.gameOver import GameOver
 from GameDemo.menu import Menu
@@ -26,6 +27,10 @@ class Game:
                 if fase_result == "GAMEOVER":
                     lose = GameOver(self.window)
                     lose.run()
+
+            if menu_return == MENU_OPTIONS[1]:
+                controls = controlsWindow(self.window)
+                controls.run()
 
             if menu_return == MENU_OPTIONS[2]:
                 pygame.quit()
